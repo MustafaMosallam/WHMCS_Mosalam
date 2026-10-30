@@ -1,13 +1,7 @@
-# Netlify UI-preview deployment
-# Connect this repository to Netlify and deploy the branch feat/website-foundation.
-# All storefront UI is statically exported; no WHMCS services are used.
+# Mosalam full 40-page UI preview. No WHMCS or backend.
 [build]
-  command = "npm install --prefix apps/web --no-audit --no-fund && npm run build --prefix apps/web"
-  publish = "apps/web/out"
-
-[build.environment]
-  NODE_VERSION = "20"
-  DEPLOY_TARGET = "netlify"
+  publish = "site"
+  command = "echo 'Mosalam static UI requires no build step'"
 
 [[headers]]
   for = "/*"
