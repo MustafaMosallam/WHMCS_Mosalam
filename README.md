@@ -1,13 +1,31 @@
-# Mosalam — Hosting & Cloud Platform
+# Mosalam Website
 
-This repository is the home for the Mosalam public website and its future WHMCS integration.
+Public-facing Mosalam hosting website built using Next.js App Router, React, TypeScript and the Mosalam design system.
 
-## Project separation
+## Run locally
 
-- `apps/web/` — Mosalam's public website (Next.js and TypeScript)
-- `integrations/whmcs/` — future WHMCS adapter and documentation (not yet implemented)
-- `docs/` — product catalog, brand/UX decisions, launch and integration checklists
+```bash
+cd apps/web
+npm install
+npm run dev
+```
 
-**Safety:** Do not commit WHMCS credentials, API keys, private server details, production customer data or paid WHMCS source files.
+Open http://localhost:3000.
 
-Implementation is developed in reviewable pull requests. No commerce, provisioning, customer login or payment behavior should be described as live before backend integration and testing.
+## Available pages
+
+- Home
+- Web Hosting (`/hosting/cpanel`)
+- VPS Hosting (`/servers/vps`)
+- VDS Servers (`/servers/vds`)
+- Domains (`/domains`)
+- Website Design (`/website-design`)
+- Cloud Support (`/cloud/managed`)
+- About (`/about`)
+- Contact (`/contact`)
+
+## Current limitations
+
+This branch provides the public-facing frontend, service information and responsive styles. Live WHMCS products, actual prices, checkout, customer account login, payment processing, message submission and server provisioning are **not yet implemented**. Do not advertise live order capability until those systems are connected and tested.
+
+See `docs/ARCHITECTURE.md` and `integrations/whmcs/README.md` for backend requirements. Confirm current commercial offers and undertake accessibility and browser testing before production launch.

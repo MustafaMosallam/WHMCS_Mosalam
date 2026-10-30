@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Database">
+<path d="M15 2H33L46 15V33L33 46H15L2 33V15Z" fill="none" stroke="#0774FF" stroke-opacity=".22" stroke-width="1.2"/>
+<g fill="none" stroke="#033AA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="13" rx="11" ry="5"/><path d="M13 13v20c0 3 5 5 11 5s11-2 11-5V13M13 22c0 3 5 5 11 5s11-2 11-5M13 30c0 3 5 5 11 5s11-2 11-5"/></g>
+<circle cx="40.5" cy="39.5" r="2" fill="#FFC107"/>
+</svg>

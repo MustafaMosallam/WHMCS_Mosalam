@@ -1,0 +1,10 @@
+# Mosalam full 40-page UI preview. No WHMCS or backend.
+[build]
+  publish = "site"
+  command = "echo 'Mosalam static UI requires no build step'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

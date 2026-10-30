@@ -1,0 +1,178 @@
+[
+  {
+    "slug": "hosting/cpanel",
+    "title": "cPanel Hosting",
+    "icon": "cpanel",
+    "illustration": "cpanel-hosting",
+    "tiers": [
+      "Launch",
+      "Grow",
+      "Business"
+    ],
+    "bullets": [
+      "Website control panel",
+      "Domain and email requirements",
+      "Backup policy to confirm"
+    ]
+  },
+  {
+    "slug": "hosting/wordpress",
+    "title": "WordPress Hosting",
+    "icon": "wordpress",
+    "illustration": "wordpress-hosting",
+    "tiers": [
+      "Starter",
+      "Grow",
+      "Scale"
+    ],
+    "bullets": [
+      "WordPress environment",
+      "Caching and updates scope",
+      "Restore and migration options"
+    ]
+  },
+  {
+    "slug": "hosting/reseller",
+    "title": "Reseller Hosting",
+    "icon": "reseller",
+    "illustration": "reseller-hosting",
+    "tiers": [
+      "Solo",
+      "Agency",
+      "Studio"
+    ],
+    "bullets": [
+      "Client account separation",
+      "Panel and licensing scope",
+      "Team workflow options"
+    ]
+  },
+  {
+    "slug": "servers/vps",
+    "title": "VPS Servers",
+    "icon": "vps",
+    "illustration": "vps-hosting",
+    "tiers": [
+      "Build",
+      "Deploy",
+      "Scale"
+    ],
+    "bullets": [
+      "vCPU, RAM and storage selection",
+      "OS and root access scope",
+      "Management and backup choices"
+    ]
+  },
+  {
+    "slug": "servers/vds",
+    "title": "VDS Servers",
+    "icon": "vds",
+    "illustration": "vds-hosting",
+    "tiers": [
+      "Reserved",
+      "Performance",
+      "Enterprise"
+    ],
+    "bullets": [
+      "Dedicated allocation needs",
+      "Operating system choice",
+      "Support and backup scope"
+    ]
+  },
+  {
+    "slug": "servers/dedicated",
+    "title": "Dedicated Servers",
+    "icon": "dedicated",
+    "illustration": "dedicated-servers",
+    "tiers": [
+      "Single node",
+      "Advanced",
+      "Custom"
+    ],
+    "bullets": [
+      "Processor and storage requirements",
+      "Networking and location",
+      "Managed or self-managed"
+    ]
+  },
+  {
+    "slug": "cloud/managed",
+    "title": "Managed Cloud",
+    "icon": "managed-cloud",
+    "illustration": "managed-cloud",
+    "tiers": [
+      "Application",
+      "Team",
+      "Platform"
+    ],
+    "bullets": [
+      "Infrastructure architecture",
+      "Operations ownership",
+      "Security and recovery responsibilities"
+    ]
+  },
+  {
+    "slug": "cloud/backup",
+    "title": "Backup & Recovery",
+    "icon": "backups",
+    "illustration": "backup-recovery",
+    "tiers": [
+      "Protect",
+      "Recover",
+      "Continuity"
+    ],
+    "bullets": [
+      "Backup frequency requirements",
+      "Retention and restore objectives",
+      "Coverage and exclusions"
+    ]
+  },
+  {
+    "slug": "solutions/software-houses",
+    "title": "Software House Infrastructure",
+    "icon": "software-house",
+    "illustration": "software-house",
+    "tiers": [
+      "Dev & staging",
+      "Production",
+      "Platform"
+    ],
+    "bullets": [
+      "Workload and environments",
+      "CI/CD and observability needs",
+      "Security and team ownership"
+    ]
+  },
+  {
+    "slug": "solutions/custom-infrastructure",
+    "title": "Custom Infrastructure",
+    "icon": "infrastructure",
+    "illustration": "custom-infrastructure",
+    "tiers": [
+      "Discovery",
+      "Architecture",
+      "Managed scope"
+    ],
+    "bullets": [
+      "Topology and workload planning",
+      "Networking and data needs",
+      "Deployment and ongoing operations"
+    ]
+  },
+  {
+    "slug": "domains",
+    "title": "Domains & DNS",
+    "icon": "domains",
+    "illustration": "domains",
+    "tiers": [
+      "Register",
+      "Transfer",
+      "Portfolio"
+    ],
+    "bullets": [
+      "Domain and TLD checks",
+      "DNS and ownership responsibilities",
+      "Renewal and transfer terms"
+    ]
+  }
+]

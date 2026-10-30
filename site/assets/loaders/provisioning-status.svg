@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" width="420" height="150" role="img" aria-labelledby="title desc">
+<title id="title">Infrastructure setup in progress</title><desc id="desc">A server symbol with a non-numeric indeterminate activity bar; actual provisioning stages must come from the backend.</desc>
+<style>
+.pulse{animation:breathe 1.5s ease-in-out infinite}
+.progress{animation:slide 2.4s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.45}}
+@keyframes slide{0%{transform:translateX(-115px)}50%{transform:translateX(170px)}100%{transform:translateX(-115px)}}
+@media(prefers-reduced-motion:reduce){.pulse,.progress{animation:none}}
+</style>
+<rect x="6" y="6" width="408" height="138" rx="14" fill="#F3F5FF" stroke="#DFE7F6"/>
+<g fill="none" stroke="#033AA7" stroke-width="3"><rect x="28" y="29" width="84" height="30" rx="5"/><rect x="28" y="65" width="84" height="30" rx="5"/></g>
+<g fill="#2DD4A0" class="pulse"><circle cx="43" cy="44" r="4"/><circle cx="43" cy="80" r="4"/></g>
+<path d="M59 44h38M59 80h38" stroke="#0774FF" stroke-width="3"/>
+<text x="135" y="49" font-family="Arial,sans-serif" font-weight="600" font-size="19" fill="#033AA7">Setting up infrastructure</text>
+<text x="135" y="74" font-family="Arial,sans-serif" font-size="13" fill="#4C5671">Please keep this page open</text>
+<rect x="135" y="91" width="245" height="9" rx="4.5" fill="#DCE6F5"/>
+<svg x="135" y="91" width="245" height="9" viewBox="0 0 245 9"><defs><clipPath id="c"><rect width="245" height="9" rx="4.5"/></clipPath></defs><g clip-path="url(#c)"><rect class="progress" x="-115" y="0" width="115" height="9" rx="4.5" fill="#0774FF"/></g></svg>
+</svg>

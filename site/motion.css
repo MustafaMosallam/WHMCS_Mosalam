@@ -1,0 +1,117 @@
+/* Mosalam Electric Lines v2 — section-local, vector-native geometric pulses.
+   No fixed image, full-viewport ornament, or forced page-load delays. */
+:root {
+  --ms-electric-gold: #ffc107;
+  --ms-electric-sky: #8fd0ff;
+  --ms-electric-royal: #286ed5;
+}
+.ms-circuit-zone { position: relative; isolation: isolate; }
+.ms-circuit-zone > :not(.ms-circuit-field) { position: relative; z-index: 1; }
+.ms-circuit-field {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  top: 0;
+  right: 0;
+  width: min(55%, 720px);
+  height: 100%;
+  min-height: 185px;
+  overflow: hidden;
+  opacity: .85;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 28%, #000);
+  mask-image: linear-gradient(90deg, transparent, #000 28%, #000);
+}
+.ms-circuit-field[data-side="left"] {
+  left: 0; right: auto;
+  -webkit-mask-image: linear-gradient(90deg, #000, #000 68%, transparent);
+  mask-image: linear-gradient(90deg, #000, #000 68%, transparent);
+}
+.ms-circuit-field svg { display: block; width: 100%; height: 100%; overflow: hidden; }
+.ms-circuit-field .ms-symmetry {
+  fill: none;
+  stroke: #166bcb;
+  stroke-width: 1.05;
+  opacity: .18;
+  vector-effect: non-scaling-stroke;
+}
+.ms-circuit-field .ms-route {
+  stroke: #3196df;
+  stroke-width: 1.65;
+  opacity: .30;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.ms-circuit-field .ms-node { fill: #dba92b; opacity: .72; }
+.ms-circuit-field .ms-node-halo { fill: none; stroke: #ffc107; stroke-width: 1.2; opacity: .28; }
+.ms-circuit-field[data-surface="dark"] .ms-symmetry { stroke: #d9eeff; opacity: .22; }
+.ms-circuit-field[data-surface="dark"] .ms-route { stroke: #c7e8ff; opacity: .34; }
+.ms-circuit-field[data-surface="dark"] .ms-node { fill: #ffe17c; }
+.ms-electric-pulse { --pulse-duration: 950ms; }
+.ms-electric-pulse .ms-flare {
+  fill: none;
+  opacity: 0;
+  stroke-dasharray: 42 1090;
+  stroke-dashoffset: 0;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.ms-electric-pulse .ms-flare-halo { stroke: #ffca28; stroke-width: 8; filter: blur(2px); }
+.ms-electric-pulse .ms-flare-core { stroke: #ffd34e; stroke-width: 2.8; filter: drop-shadow(0 0 3px rgba(255,197,50,.45)); }
+.ms-electric-pulse.is-firing .ms-flare {
+  animation: ms-electric-travel var(--pulse-duration) cubic-bezier(.14,.08,.72,.95) 1 both;
+}
+.ms-electric-pulse.is-firing .ms-flare-halo { animation-name: ms-electric-travel-halo; }
+@keyframes ms-electric-travel {
+  0%   { stroke-dashoffset: 0; opacity: 0; }
+  7%   { opacity: .98; }
+  82%  { opacity: .95; }
+  100% { stroke-dashoffset: -1000; opacity: 0; }
+}
+@keyframes ms-electric-travel-halo {
+  0%   { stroke-dashoffset: 0; opacity: 0; }
+  9%   { opacity: .16; }
+  87%  { opacity: .22; }
+  100% { stroke-dashoffset: -1000; opacity: 0; }
+}
+.ms-circuit-field[data-surface="light"] .ms-flare-core { stroke: #bd860c; filter: drop-shadow(0 0 2px rgba(255,193,7,.33)); }
+.ms-circuit-field[data-surface="light"] .ms-flare-halo { stroke: #f4bd35; }
+/* Section positioning: geometry stays near section sides, never over essential copy. */
+.hero > .ms-circuit-field { width: min(54%, 740px); opacity: .76; }
+.dark-panel > .ms-circuit-field, .dark-banner > .ms-circuit-field { opacity: .7; }
+.footer > .ms-circuit-field { width: min(42%, 490px); opacity: .60; }
+.portal-main > .ms-circuit-field { width: min(36%, 460px); opacity: .40; }
+@media (max-width: 790px) {
+  .ms-circuit-field { width: 61%; opacity: .53; }
+  .hero > .ms-circuit-field { width: 77%; opacity: .59; }
+  .dark-panel > .ms-circuit-field, .dark-banner > .ms-circuit-field { opacity: .42; }
+  .ms-electric-pulse .ms-flare-halo { display: none; }
+}
+@media (max-width: 480px) {
+  .ms-circuit-field { width: 69%; opacity: .47; }
+  .hero > .ms-circuit-field { width: 82%; opacity: .52; }
+  .ms-circuit-field .ms-symmetry { opacity: .11; }
+  .ms-circuit-field .ms-route { opacity: .21; }
+}
+/* Existing short page transition, retained for in-site links only. */
+.ms-transition-screen { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; pointer-events: none; background: linear-gradient(155deg,#06285f,#0752bc); transition: opacity .15s ease, visibility .15s ease; }
+html.ms-page-leaving .ms-transition-screen, html.ms-page-entering .ms-transition-screen { opacity: 1; visibility: visible; pointer-events: all; }
+.ms-transition-card { display: flex; flex-direction: column; align-items: center; gap: 14px; color: #fff; text-align: center; }
+.ms-transition-mark { display: grid; place-items: center; width: 76px; height: 76px; }
+.ms-transition-mark svg { width: 72px; height: 72px; overflow: visible; }
+.ms-transition-mark .ms-mark-outline { stroke: #fff; fill: none; stroke-width: 3.2; }
+.ms-transition-mark .ms-mark-core { fill: #ffc107; }
+.ms-transition-mark .ms-mark-light { stroke: #ffc107; stroke-width: 3.2; stroke-linecap: round; fill: none; stroke-dasharray: 55 170; animation: ms-mark-trace 1s linear infinite; }
+@keyframes ms-mark-trace { to { stroke-dashoffset: -225; } }
+.ms-transition-name { font: 750 20px var(--heading); letter-spacing: .04em; }
+.ms-transition-rule { width: 90px; height: 2px; background: #ffffff47; position: relative; overflow: hidden; border-radius: 5px; }
+.ms-transition-rule::after { content: ""; position: absolute; left: -40%; top: 0; width: 40%; height: 100%; background: #ffc107; animation: ms-rule-light 1s linear infinite; }
+@keyframes ms-rule-light { to { left: 105%; } }
+@media (prefers-reduced-motion: reduce) {
+  .ms-electric-pulse .ms-flare, .ms-mark-light, .ms-transition-rule::after { animation: none !important; opacity: 0 !important; }
+  .ms-transition-screen { transition: none !important; visibility: hidden !important; opacity: 0 !important; }
+  .ms-circuit-field { opacity: .3; }
+}

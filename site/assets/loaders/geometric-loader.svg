@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-labelledby="title">
+<title id="title">Loading</title>
+<style>
+  .orbit{transform-origin:64px 64px;animation:motif 1.5s ease-in-out infinite}
+  .stroke{stroke-dasharray:280;stroke-dashoffset:0;animation:draw 1.5s ease-in-out infinite}
+  @keyframes motif{0%,100%{transform:rotate(0deg)}50%{transform:rotate(45deg)}}
+  @keyframes draw{0%,100%{stroke-dashoffset:0;opacity:.5}50%{stroke-dashoffset:140;opacity:1}}
+  @media(prefers-reduced-motion:reduce){.orbit,.stroke{animation:none}}
+</style>
+<g class="orbit" stroke="#0774FF" stroke-width="5" fill="none" stroke-linejoin="round"><path class="stroke" d="M64 14 114 64 64 114 14 64Z"/><rect x="28" y="28" width="72" height="72"/></g>
+<circle cx="64" cy="64" r="7" fill="#FFC107"/>
+</svg>
