@@ -1,0 +1,7 @@
+MOSALAM WEBSITE
+
+1. Extract the whole ZIP folder.
+2. Open index.html in Chrome, Safari, or Edge.
+3. Do not move index.html out of the folder: CSS, JavaScript, icons and images stay beside it.
+4. For an instant homepage-only preview, use the separate Mosalam-Quick-Preview.html file.
+5. This is a frontend prototype; plan prices and checkout are not live.
