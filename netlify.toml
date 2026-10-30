@@ -1,0 +1,16 @@
+# Netlify UI-preview deployment
+# Connect this repository to Netlify and deploy the branch feat/website-foundation.
+# All storefront UI is statically exported; no WHMCS services are used.
+[build]
+  command = "npm install --prefix apps/web --no-audit --no-fund && npm run build --prefix apps/web"
+  publish = "apps/web/out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  DEPLOY_TARGET = "netlify"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
