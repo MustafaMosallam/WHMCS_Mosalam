@@ -1,13 +1,17 @@
-# Mosalam — Hosting & Cloud Platform
+# Mosalam Website
 
-This repository is the home for the Mosalam public website and its future WHMCS integration.
+Monorepo for the public hosting website and future WHMCS integration.
 
-## Project separation
+## Quick start
 
-- `apps/web/` — Mosalam's public website (Next.js and TypeScript)
-- `integrations/whmcs/` — future WHMCS adapter and documentation (not yet implemented)
-- `docs/` — product catalog, brand/UX decisions, launch and integration checklists
+```bash
+cd apps/web
+npm install
+npm run dev
+```
 
-**Safety:** Do not commit WHMCS credentials, API keys, private server details, production customer data or paid WHMCS source files.
+Open http://localhost:3000.
 
-Implementation is developed in reviewable pull requests. No commerce, provisioning, customer login or payment behavior should be described as live before backend integration and testing.
+## Status
+
+This branch contains the initial frontend foundation only: homepage, service route templates and shared brand styling. Live commerce, customer login, plan prices and provisioning are not connected. See `docs/ARCHITECTURE.md` and `integrations/whmcs/README.md`.
