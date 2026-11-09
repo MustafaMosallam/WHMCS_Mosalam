@@ -33,8 +33,15 @@ function createField(section,i){
   const stars=starCenters.map(([x,y],j)=>{
     const radius=j===1?37:28;
     const x0=x-radius,y0=y-radius,size=radius*2;
-    return `<rect x="${x0}" y="${y0}" width="${size}" height="${size}" />`+
-           `<rect x="${x0}" y="${y0}" width="${size}" height="${size}" transform="rotate(45 ${x} ${y})" />`;
+    const staticStar=`<g class="ms-symmetry"><rect x="${x0}" y="${y0}" width="${size}" height="${size}"/>`+
+      `<rect x="${x0}" y="${y0}" width="${size}" height="${size}" transform="rotate(45 ${x} ${y})"/></g>`;
+    // Only the central octagram receives a quiet gold moving tracer.
+    if(j!==1) return staticStar;
+    const frame=`x="${x0}" y="${y0}" width="${size}" height="${size}" transform="rotate(45 ${x} ${y})" pathLength="1000"`;
+    return staticStar+
+      `<g class="ms-electric-pulse ms-star-electric" aria-hidden="true">`+
+      `<rect class="ms-flare ms-flare-halo" ${frame}/>`+
+      `<rect class="ms-flare ms-flare-core" ${frame}/></g>`;
   }).join('');
   const routeMarkup=paths[variant].map((d,j)=>{
     const nodeX=(variant*67+j*113+324)%420+110;
@@ -53,7 +60,7 @@ function createField(section,i){
   layer.dataset.surface=dark?'dark':'light';
   layer.setAttribute('aria-hidden','true');
   layer.innerHTML=`<svg viewBox="0 0 640 460" preserveAspectRatio="xMidYMid slice" xmlns="${SVG_NS}" aria-hidden="true" focusable="false">`+
-    `<g ${flip}><g class="ms-symmetry">${stars}</g>${routeMarkup}</g></svg>`;
+    `<g ${flip}>${stars}${routeMarkup}</g></svg>`;
   section.classList.add('ms-circuit-zone');
   section.insertBefore(layer,section.firstChild);
   return {layer,groups:[...layer.querySelectorAll('.ms-electric-pulse')],timers:new Set(),visible:false};
@@ -73,7 +80,8 @@ function schedule(circuit,group,delay){
   const timer=window.setTimeout(()=>{
     circuit.timers.delete(timer);
     if(!circuit.visible || document.hidden || reduced.matches) return;
-    const duration=random(750,1160);
+    const isStar=group.classList.contains('ms-star-electric');
+    const duration=isStar?random(1700,2400):random(980,1450);
     group.style.setProperty('--pulse-duration',duration+'ms');
     group.classList.remove('is-firing');
     // Reflow the tiny SVG group only to restart its short animated stroke.
@@ -82,7 +90,7 @@ function schedule(circuit,group,delay){
     const cleanup=window.setTimeout(()=>{
       circuit.timers.delete(cleanup);
       group.classList.remove('is-firing');
-      schedule(circuit,group,random(1150,2400));
+      schedule(circuit,group,isStar?random(3400,5800):random(1700,3200));
     },duration+25);
     circuit.timers.add(cleanup);
   },delay);
@@ -91,7 +99,8 @@ function schedule(circuit,group,delay){
 function start(circuit){
   if(circuit.visible || document.hidden || reduced.matches) return;
   circuit.visible=true;
-  circuit.groups.forEach((group,i)=>schedule(circuit,group,random(140,900)+i*520));
+  circuit.groups.forEach((group,i)=>schedule(circuit,group,
+    group.classList.contains('ms-star-electric')?random(1500,3400):random(180,1100)+i*600));
 }
 if(!reduced.matches){
   if('IntersectionObserver' in window){
