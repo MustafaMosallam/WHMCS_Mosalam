@@ -65,6 +65,11 @@
   animation: ms-electric-travel var(--pulse-duration) cubic-bezier(.14,.08,.72,.95) 1 both;
 }
 .ms-electric-pulse.is-firing .ms-flare-halo { animation-name: ms-electric-travel-halo; }
+/* Restraint: only one octagram per section gets a slow gold tracer. */
+.ms-star-electric .ms-flare { stroke-dasharray: 27 1090; }
+.ms-star-electric .ms-flare-halo { stroke: #ffc842; stroke-width: 5.2; filter: blur(1.6px); }
+.ms-star-electric .ms-flare-core { stroke: #ffe3a0; stroke-width: 1.8; }
+.ms-circuit-field[data-surface="light"] .ms-star-electric .ms-flare-core { stroke: #bf850d; }
 @keyframes ms-electric-travel {
   0%   { stroke-dashoffset: 0; opacity: 0; }
   7%   { opacity: .98; }
@@ -89,6 +94,7 @@
   .hero > .ms-circuit-field { width: 77%; opacity: .59; }
   .dark-panel > .ms-circuit-field, .dark-banner > .ms-circuit-field { opacity: .42; }
   .ms-electric-pulse .ms-flare-halo { display: none; }
+  .ms-star-electric .ms-flare-core { stroke-width: 1.45; }
 }
 @media (max-width: 480px) {
   .ms-circuit-field { width: 69%; opacity: .47; }
